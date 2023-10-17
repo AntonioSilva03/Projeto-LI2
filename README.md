@@ -99,8 +99,8 @@ O que será guardado na stack: Valor guardado em A
 Input: 10 :A
 Neste caso, o valor 10 será guardado na variável A
 
-Input: 10 :A 20 :B A B +
-Neste caso, o valor 10 e 20 serão guardados nas variáveis A e B e depois os valores serão somados.
+Input: [ 1 2 3 ] :A 20 :B A B +
+Neste caso, o array [ 1 2 3 ] e 20 serão guardados nas variáveis A e B e depois os valores serão somados (juntados neste caso).
 ```
 As variáveis são guardadas durante a execução do programa, sendo depois reiniciadas.
 
