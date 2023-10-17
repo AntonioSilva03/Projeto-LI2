@@ -35,7 +35,7 @@ Arrays: [ 2 3 4 5 6 ]
 ```
 
 ```
-Strings: "string"
+Strings: "string" "teste"
 ```
 
 ```
@@ -44,12 +44,52 @@ Bloco: { 2 3 4 + [ 3 4 5 ] _ }
 
 - Operações com dois inteiros
 ```
-2 2 +
+Input: 2 2 +
+O que será guardado na stack: 4
 ```
 O programa vai guardar os dois valores na stack e a operação vai retirá-los e operá-los (importante salientar que as operações não são guardadas na stack)
 
 - Operações com arrays
 ```
-[ 2 3 4 5 6 ] [ 2 3 4 ] +
-[ 2 3 4 5 ] 2 *
-Os arrays 
+Input: [ 2 3 4 5 6 ] [ 2 3 4 ] +
+O que será guardado na stack: [ 2 3 4 5 6 2 3 4 ]
+
+Input: [ 2 3 4 5 ] 2 *
+O que será guardado na stack: [ 2 3 4 5 2 3 4 5 ]
+```
+Os arrays são implementados como substacks logo podem conter todos os tipos de dados dentro. Adicionalmente os valores podem ser definidos com operações.
+
+Exemplo:
+```
+Input: [ 2 3 4 + 3 ]
+Array que será guardado na stack: [ 2 7 3 ]
+```
+
+- Operações com strings
+```
+Input: "string" "teste" +
+O que será guardado na stack: "stringteste"
+```
+As strings podem conter espaços, tudo o que estiver dentro das aspas será guardado na mesma string.
+```
+"string de teste"
+```
+
+- Operações com blocos
+
+Blocos são guardados sem qualquer manipulação isto é, tudo o que estiver dentro do bloco (operações inclusive) serão guardadas na stack.
+```
+Input: { 2 3 + [ 2 3 4 5 ] + }
+O que será guardado na stack: { 2 3 + [ 2 3 4 5 ] + }
+```
+Estes blocos podem depois ser executados usando o token ```~```. Apenas aí todas as operações serão efetuadas.
+```
+Input: { 2 3 + [ 2 3 4 5 ] + } ~
+O que será guardado na stack: [ 7 2 3 4 5 ]
+```
+Neste caso, a stack guarda o ```2``` e o ```3```, lê o ```+``` e aplica-o aos dois valores anteriores e guarda o resultado na stack. Depois lê o array e guarda o na stack. Por fim lê o token ```+``` e aplica-o aos dois valores anteriores. Neste caso os valores são ```7``` e ```[ 2 3 4 5 ]``` logo a operação vai juntar os valores na ordem que aparecem resultando no array ```[ 7 2 3 4 5 ]```.
+
+Como o programa lê e faz a triagem do input token a token é possível fazer multiplas operações ao mesmo tempo com vários tipos de estruturas.
+
+## Conclusão
+Trabalho realizado por Pedro Silva, António Silva e Diogo Barros.
