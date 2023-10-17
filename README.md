@@ -89,6 +89,21 @@ O que será guardado na stack: [ 7 2 3 4 5 ]
 ```
 Neste caso, a stack guarda o ```2``` e o ```3```, lê o ```+``` e aplica-o aos dois valores anteriores e guarda o resultado na stack. Depois lê o array e guarda o na stack. Por fim lê o token ```+``` e aplica-o aos dois valores anteriores. Neste caso os valores são ```7``` e ```[ 2 3 4 5 ]``` logo a operação vai juntar os valores na ordem que aparecem resultando no array ```[ 7 2 3 4 5 ]```.
 
+- Variáveis
+
+Este programa possui a funcionalidade de substituir valores por letras de modo a simplificar o input. Estas variáveis são representadas por letras maiusculas de A a Z. Seguem as instruções de como as utilizar:
+```
+Input: A
+O que será guardado na stack: Valor guardado em A
+
+Input: 10 :A
+Neste caso, o valor 10 será guardado na variável A
+
+Input: 10 :A 20 :B A B +
+Neste caso, o valor 10 e 20 serão guardados nas variáveis A e B e depois os valores serão somados.
+```
+As variáveis são guardadas durante a execução do programa, sendo depois reiniciadas.
+
 Como o programa lê e faz a triagem do input token a token é possível fazer multiplas operações ao mesmo tempo com vários tipos de estruturas.
 
 ## Conclusão
